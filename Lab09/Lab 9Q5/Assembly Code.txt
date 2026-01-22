@@ -1,9 +1,0 @@
-		0: MOVZ X9, #0x1234, LSL 3 // Shift to far left (48)
-		4: MOVZ X1, #0x5678, LSL 2 // Shift 32
-		8: MOVZ X2, #0x9ABC, LSL 1 // Shift 16
-		C: MOVZ X3, #0xDEF0, LSL 0 // No shift, last 4
-		10: ADD X9, X9, X1  	   // Add all parts together to get whole number
-		14: ADD X9, X9, X2
-		18: ADD X9, X9, X3
-		1C: STUR X9, [XZR, 0x28]  // Store at address 28
-		20: LDUR X10, [XZR, 0x28] // Re-grab the data
